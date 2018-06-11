@@ -41,7 +41,7 @@ const char* get_var(const char *restrict variable) {
         if (env_path[0] == '\0')
             snprintf(file, DOTENV_MAX_PATH, "%s", ENV_FILE);
         else
-            snprintf(file, DOTENV_MAX_PATH, "%s%s", env_path, ENV_FILE);
+            snprintf(file, DOTENV_MAX_PATH, "%s/%s", env_path, ENV_FILE);
 
         if ((fd = fopen(file, "r")) != NULL) {
             fseek(fd, 0L, SEEK_END);
